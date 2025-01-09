@@ -2,11 +2,28 @@ import { Rank } from "../enums/Rank"
 
 export class Warrior {
   experience: number
+  achievements: string[]
 
-  constructor(experience: number = 100) {
+  constructor(experience: number = 100, achievements: string[] = []) {
     this.experience = experience
+    this.achievements = achievements
   }
 
+  // Functions
+  training(details: [string, number, number]) {
+    if (details[0] == null || details[1] == null || details[2] == null) {
+      return 'An element is missing'
+    }
+
+    if (this.level >= details[2]) {
+      this.achievements.push(details[0])
+      this.experience += details[1]
+    } else {
+      return 'Not strong enough'
+    }
+  }
+
+  // Computed
   get level(): number {
     const experience = Math.max(10_000, this.experience)
     return experience / 100
