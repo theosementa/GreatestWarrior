@@ -25,7 +25,7 @@ export class Warrior {
 
   // Computed
   get level(): number {
-    const experience = Math.max(10_000, this.experience)
+    const experience = Math.min(10_000, this.experience)
     return experience / 100
   }
 

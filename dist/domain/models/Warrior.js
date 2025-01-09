@@ -22,7 +22,7 @@ class Warrior {
     }
     // Computed
     get level() {
-        const experience = Math.max(10000, this.experience);
+        const experience = Math.min(10000, this.experience);
         return experience / 100;
     }
     get rank() {
