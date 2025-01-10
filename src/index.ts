@@ -8,6 +8,10 @@ function main() {
   warriorUtils.printLevel()
   warriorUtils.printExperience()
   warriorUtils.printRank()
+  warrior.training(["Defeated Chuck Norris", 9000, 1])
+  warriorUtils.printLevel()
+  warriorUtils.printExperience()
+  warriorUtils.printRank()
 }
 
 main()
