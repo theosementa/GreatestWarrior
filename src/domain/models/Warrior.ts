@@ -29,7 +29,7 @@ export class Warrior {
       return
     }
 
-    if (level > this.level - 5) {
+    if (this.level < (level - 5)) {
       console.log("You've been defeated")
       return
     }
@@ -51,13 +51,13 @@ export class Warrior {
     }
 
     switch (true) {
-      case this.level >= (level + 2):
+      case (this.level - 2) >= level:
         console.log("Easy fight")
         return
-      case this.level >= (level + 1):
+      case (this.level - 1) >= level:
         console.log("A good fight")
         return
-      case this.level === level:
+      case this.level <= level:
         console.log("An intense fight")
         return
     }

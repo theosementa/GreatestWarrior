@@ -19,4 +19,11 @@ export class WarriorUtils {
     console.log(`Rank : ${this.warrior.rank}`);
   }
 
+  printAchievements() {
+    console.log('Achievements :')
+    this.warrior.achievements.forEach(($0) => {
+      console.log(`- ${$0}`)
+    }) 
+  }
+
 }
