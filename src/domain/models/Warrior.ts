@@ -23,6 +23,46 @@ export class Warrior {
     }
   }
 
+  battle(level: number) {
+    if (level < 1 || level > 100) {
+      console.log('Invalid level')
+      return
+    }
+
+    if (level > this.level - 5) {
+      console.log("You've been defeated")
+      return
+    }
+
+    switch (true) {
+      case level > this.level:
+        const diff = level - this.level
+        this.experience += (20 * diff * diff)
+        break
+      case level === this.level:
+        this.experience += 10
+        break
+      case level === (this.level - 1):
+        this.experience += 5
+        break
+      case level <= (this.level - 2):
+        this.experience += 0
+        break
+    }
+
+    switch (true) {
+      case this.level >= (level + 2):
+        console.log("Easy fight")
+        return
+      case this.level >= (level + 1):
+        console.log("A good fight")
+        return
+      case this.level === level:
+        console.log("An intense fight")
+        return
+    }
+  }
+
   // Computed
   get level(): number {
     const experience = Math.min(10_000, this.experience)

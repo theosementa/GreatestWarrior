@@ -8,10 +8,16 @@ function main() {
   warriorUtils.printLevel()
   warriorUtils.printExperience()
   warriorUtils.printRank()
-  warrior.training(["Defeated Chuck Norris", 9000, 1])
+  warrior.training(["Defeated Chuck Norris", 5000, 1])
+  console.log('\n')
+
   warriorUtils.printLevel()
   warriorUtils.printExperience()
   warriorUtils.printRank()
+  console.log('\n')
+
+  warrior.battle(20)
+  warriorUtils.printExperience()
 }
 
 main()
